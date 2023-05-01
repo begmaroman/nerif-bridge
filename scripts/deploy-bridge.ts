@@ -1,0 +1,33 @@
+import { ethers, network } from 'hardhat';
+import { deployBridgeContracts } from './deploy/bridge';
+import { readChainContractsConfig, readContractsConfig, updateContractsConfig, writeChainContractsConfig } from './deploy/config';
+
+async function main() {
+  const verify = (process.env.VERIFY || '').trim().toLowerCase() === 'true';
+  const chainId = network.config.chainId ?? 1;
+  const blockNumber = await ethers.provider.getBlockNumber();
+
+  const homeContractsConfig = await readContractsConfig();
+  const senders = homeContractsConfig.senders;
+
+  const contractsConfig = await readChainContractsConfig(chainId);
+  const registry = contractsConfig.registry;
+
+  const res = await deployBridgeContracts({
+    registry: registry,
+    senders: senders,
+    displayLogs: true,
+    verify: verify,
+  });
+
+  contractsConfig.networkName = network.name;
+  contractsConfig.startBlock = blockNumber.toString();
+
+  updateContractsConfig(contractsConfig, res);
+  await writeChainContractsConfig(chainId, contractsConfig);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
