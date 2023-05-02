@@ -17,6 +17,7 @@ abigen: # Generate go files
 
 .PHONY: init
 init:
+	touch ./contracts.json
 	touch ./contracts-5.json
 	touch ./contracts-80001.json
 
@@ -24,4 +25,7 @@ init:
 deploy:
 	npx hardhat --network mumbai run scripts/deploy-bridge.ts
 	npx hardhat --network goerli run scripts/deploy-bridge.ts
-	npx hardhat --network bsc-testnet run scripts/deploy-test-receiver.ts
+
+.PHONY: deploy-receiver
+deploy-receiver:
+	npx hardhat --network mumbai run scripts/deploy-test-receiver.ts
