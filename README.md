@@ -54,3 +54,5 @@ $ make deploy-receiver
 ```
 
 Test receiver contract address is stored in the contracts-80001.json file.
+
+Now, the first test message can be sent be executing `send` function within the bridge contract deployed on goerli.
