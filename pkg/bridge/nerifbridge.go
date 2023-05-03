@@ -30,7 +30,7 @@ var (
 
 // NerifBridgeMetaData contains all meta data concerning the NerifBridge contract.
 var NerifBridgeMetaData = &bind.MetaData{
-	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gasAmount\",\"type\":\"uint256\"}],\"name\":\"Receive\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gasAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"Send\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"addSender\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_senders\",\"type\":\"address[]\"},{\"internalType\":\"address\",\"name\":\"_registry\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"gasAmount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"rec\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registry\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"removeSender\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"gasAmount\",\"type\":\"uint256\"}],\"name\":\"send\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"senders\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gasAmount\",\"type\":\"uint256\"}],\"name\":\"Receive\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gasAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"Send\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"addSender\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gateway\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_senders\",\"type\":\"address[]\"},{\"internalType\":\"address\",\"name\":\"_gateway\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"gasAmount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"rec\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"removeSender\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"gasAmount\",\"type\":\"uint256\"}],\"name\":\"send\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"senders\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
 // NerifBridgeABI is the input ABI used to generate the binding from.
@@ -179,6 +179,37 @@ func (_NerifBridge *NerifBridgeTransactorRaw) Transact(opts *bind.TransactOpts, 
 	return _NerifBridge.Contract.contract.Transact(opts, method, params...)
 }
 
+// Gateway is a free data retrieval call binding the contract method 0x116191b6.
+//
+// Solidity: function gateway() view returns(address)
+func (_NerifBridge *NerifBridgeCaller) Gateway(opts *bind.CallOpts) (common.Address, error) {
+	var out []interface{}
+	err := _NerifBridge.contract.Call(opts, &out, "gateway")
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// Gateway is a free data retrieval call binding the contract method 0x116191b6.
+//
+// Solidity: function gateway() view returns(address)
+func (_NerifBridge *NerifBridgeSession) Gateway() (common.Address, error) {
+	return _NerifBridge.Contract.Gateway(&_NerifBridge.CallOpts)
+}
+
+// Gateway is a free data retrieval call binding the contract method 0x116191b6.
+//
+// Solidity: function gateway() view returns(address)
+func (_NerifBridge *NerifBridgeCallerSession) Gateway() (common.Address, error) {
+	return _NerifBridge.Contract.Gateway(&_NerifBridge.CallOpts)
+}
+
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 //
 // Solidity: function owner() view returns(address)
@@ -208,37 +239,6 @@ func (_NerifBridge *NerifBridgeSession) Owner() (common.Address, error) {
 // Solidity: function owner() view returns(address)
 func (_NerifBridge *NerifBridgeCallerSession) Owner() (common.Address, error) {
 	return _NerifBridge.Contract.Owner(&_NerifBridge.CallOpts)
-}
-
-// Registry is a free data retrieval call binding the contract method 0x7b103999.
-//
-// Solidity: function registry() view returns(address)
-func (_NerifBridge *NerifBridgeCaller) Registry(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _NerifBridge.contract.Call(opts, &out, "registry")
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// Registry is a free data retrieval call binding the contract method 0x7b103999.
-//
-// Solidity: function registry() view returns(address)
-func (_NerifBridge *NerifBridgeSession) Registry() (common.Address, error) {
-	return _NerifBridge.Contract.Registry(&_NerifBridge.CallOpts)
-}
-
-// Registry is a free data retrieval call binding the contract method 0x7b103999.
-//
-// Solidity: function registry() view returns(address)
-func (_NerifBridge *NerifBridgeCallerSession) Registry() (common.Address, error) {
-	return _NerifBridge.Contract.Registry(&_NerifBridge.CallOpts)
 }
 
 // Senders is a free data retrieval call binding the contract method 0x982fb9d8.
@@ -295,23 +295,23 @@ func (_NerifBridge *NerifBridgeTransactorSession) AddSender(sender common.Addres
 
 // Initialize is a paid mutator transaction binding the contract method 0x462d0b2e.
 //
-// Solidity: function initialize(address[] _senders, address _registry) returns()
-func (_NerifBridge *NerifBridgeTransactor) Initialize(opts *bind.TransactOpts, _senders []common.Address, _registry common.Address) (*types.Transaction, error) {
-	return _NerifBridge.contract.Transact(opts, "initialize", _senders, _registry)
+// Solidity: function initialize(address[] _senders, address _gateway) returns()
+func (_NerifBridge *NerifBridgeTransactor) Initialize(opts *bind.TransactOpts, _senders []common.Address, _gateway common.Address) (*types.Transaction, error) {
+	return _NerifBridge.contract.Transact(opts, "initialize", _senders, _gateway)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x462d0b2e.
 //
-// Solidity: function initialize(address[] _senders, address _registry) returns()
-func (_NerifBridge *NerifBridgeSession) Initialize(_senders []common.Address, _registry common.Address) (*types.Transaction, error) {
-	return _NerifBridge.Contract.Initialize(&_NerifBridge.TransactOpts, _senders, _registry)
+// Solidity: function initialize(address[] _senders, address _gateway) returns()
+func (_NerifBridge *NerifBridgeSession) Initialize(_senders []common.Address, _gateway common.Address) (*types.Transaction, error) {
+	return _NerifBridge.Contract.Initialize(&_NerifBridge.TransactOpts, _senders, _gateway)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x462d0b2e.
 //
-// Solidity: function initialize(address[] _senders, address _registry) returns()
-func (_NerifBridge *NerifBridgeTransactorSession) Initialize(_senders []common.Address, _registry common.Address) (*types.Transaction, error) {
-	return _NerifBridge.Contract.Initialize(&_NerifBridge.TransactOpts, _senders, _registry)
+// Solidity: function initialize(address[] _senders, address _gateway) returns()
+func (_NerifBridge *NerifBridgeTransactorSession) Initialize(_senders []common.Address, _gateway common.Address) (*types.Transaction, error) {
+	return _NerifBridge.Contract.Initialize(&_NerifBridge.TransactOpts, _senders, _gateway)
 }
 
 // Rec is a paid mutator transaction binding the contract method 0x83a622de.
