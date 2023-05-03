@@ -4,7 +4,7 @@
 
 Nerif Bridge is the decentralized cross-chain bridge powered by Nerif Network.
 
-![img.png](./docs/structure.png)
+![structure.png](./docs/structure.png)
 
 ## Set up
 
@@ -40,6 +40,8 @@ It requires creating a bridging workflow that has the following logic:
 1. Trigger workflow execution when `event Send(uint256 chainId, address target, bytes payload, uint256 gasAmount, address sender)` event is emitted on the Goerli chain within the bridge contract.
 2. Add conditional step to check the given chain ID and exit the workflow if the value is not 80001.
 3. Otherwise, send a transaction to the bridge contract deployed on Mumbai chain in order to execute `rec` function within the contract. Pass all required arguments coming from the event.
+
+![workflow.png](./docs/workflow.png)
 
 *Note: other steps could be added at the bridge owner's discretion.*
 
