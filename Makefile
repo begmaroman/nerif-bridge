@@ -17,9 +17,9 @@ abigen: # Generate go files
 
 .PHONY: init
 init:
-	touch ./contracts.json
-	touch ./contracts-5.json
-	touch ./contracts-80001.json
+	cp .env.example .env
+	cp contracts-<chain-id>.json contracts-5.json
+	touch contracts-<chain-id>.json contracts-80001.json
 
 .PHONY: deploy
 deploy:

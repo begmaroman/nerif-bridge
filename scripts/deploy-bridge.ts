@@ -1,20 +1,24 @@
 import { ethers, network } from 'hardhat';
 import { deployBridgeContracts } from './deploy/bridge';
-import { readChainContractsConfig, readContractsConfig, updateContractsConfig, writeChainContractsConfig } from './deploy/config';
+import { readChainContractsConfig, updateContractsConfig, writeChainContractsConfig } from './deploy/config';
 
 async function main() {
   const verify = (process.env.VERIFY || '').trim().toLowerCase() === 'true';
   const chainId = network.config.chainId ?? 1;
   const blockNumber = await ethers.provider.getBlockNumber();
-
-  const homeContractsConfig = await readContractsConfig();
-  const senders = homeContractsConfig.senders;
+  const senders = !process.env.MESSAGE_SENDERS ? [] : (process.env.MESSAGE_SENDERS).trim().split(',');
 
   const contractsConfig = await readChainContractsConfig(chainId);
-  const registry = contractsConfig.registry;
+  const gateway = contractsConfig.gateway;
+
+  // Gateway address must be provided
+  if (!gateway || gateway.length === 0) {
+    console.error(`Gateway address must be specified. Check contracts-${chainId}.json file`);
+    return;
+  }
 
   const res = await deployBridgeContracts({
-    registry: registry,
+    gateway: gateway,
     senders: senders,
     displayLogs: true,
     verify: verify,

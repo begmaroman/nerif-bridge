@@ -6,9 +6,12 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "../interfaces/INerifBridgeReceiver.sol";
 
 // NerifBridge is the simple bridging contract needed to run Nerif Bridge.
+// The contract contains VERY LIMITED FUNCTIONALITY and CANNOT BY USED FOR PRODUCTION PURPOSES.
+// The logic does not contain a proper security setup as well as billing mechanis
+// and many other things needed for commercial production use.
 contract NerifBridge is Initializable, Ownable {
     mapping(address => bool) public senders;
-    address public registry;
+    address public gateway;
 
     event Send(uint256 chainId, address target, bytes payload, uint256 gasAmount, address sender);
     event Receive(address target, bytes payload, uint256 gasAmount);
@@ -20,20 +23,19 @@ contract NerifBridge is Initializable, Ownable {
         _;
     }
 
-    // onlyRegistry permits transactions coming from the Nerif Network Registry contract.
-    // TODO: Replace to gateway contract address check.
-    modifier onlyRegistry() {
-        require(registry == msg.sender, "Bridge: only registry");
+    // onlyGateway permits transactions coming from the Nerif Network Gateway contract.
+    modifier onlyGateway() {
+        require(gateway == msg.sender, "Bridge: only gateway");
         _;
     }
 
     // initialize initializes the contract with all required parameters.
-    function initialize(address[] calldata _senders, address _registry) external initializer {
+    function initialize(address[] calldata _senders, address _gateway) external initializer {
         for (uint256 i = 0; i < _senders.length; i++) {
             senders[_senders[i]] = true;
         }
 
-        registry = _registry;
+        gateway = _gateway;
     }
 
     // send sends message to other contract on the specified chain.
@@ -56,7 +58,7 @@ contract NerifBridge is Initializable, Ownable {
         bytes calldata payload,
         uint256 gasAmount,
         address sender
-    ) external onlyRegistry {
+    ) external onlyGateway {
         // Send the given payload to the receiver contract.
         INerifBridgeReceiver(target).nbReceive{gas: gasAmount}(chainId, sender, payload);
 

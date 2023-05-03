@@ -3,7 +3,7 @@ import { NerifBridge } from '../../typechain';
 import { Deployer } from './deployer';
 
 const defaultBridgeDeploymentParameters: BridgeDeploymentParameters = {
-  registry: '',
+  gateway: '',
   senders: [],
   displayLogs: false,
   verify: false,
@@ -23,7 +23,7 @@ export async function deployBridgeContracts(options?: BridgeDeploymentOptions): 
 
   deployer.log('Initializing contracts\n');
 
-  await deployer.sendTransaction(res.bridge.initialize(params.senders, params.registry), 'Initializing NerifBridge');
+  await deployer.sendTransaction(res.bridge.initialize(params.senders, params.gateway), 'Initializing NerifBridge');
 
   deployer.log('Successfully initialized contracts\n');
 
@@ -44,8 +44,8 @@ function resolveParameters(options?: BridgeDeploymentOptions): BridgeDeploymentP
     return parameters;
   }
 
-  if (options.registry !== undefined) {
-    parameters.registry = options.registry;
+  if (options.gateway !== undefined) {
+    parameters.gateway = options.gateway;
   }
 
   if (options.senders !== undefined && options.senders.length > 0) {
@@ -70,14 +70,14 @@ export interface BridgeDeployment {
 }
 
 export interface BridgeDeploymentParameters {
-  registry: string;
+  gateway: string;
   senders: string[];
   displayLogs: boolean;
   verify: boolean;
 }
 
 export interface BridgeDeploymentOptions {
-  registry?: string;
+  gateway?: string;
   senders?: string[];
   displayLogs?: boolean;
   verify?: boolean;
