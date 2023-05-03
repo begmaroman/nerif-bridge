@@ -1,0 +1,14 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+dist
+
+#Hardhat files
+cache
+artifacts
+
+.openzeppelin/.session
+
+/contracts-*.json
