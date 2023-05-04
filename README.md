@@ -28,7 +28,7 @@ Replace gateway address for the real one in those .json files. Specify real valu
 Now the bridge contracts can be deployed:
 
 ```bash
-$ make deploy
+$ make deploy-bridge
 ```
 
 As a result, [the bridge contract](./contracts/bridge/NerifBridge.sol) will be deployed on Goerli (5) and Mumbai (80001) chains.
@@ -60,3 +60,8 @@ $ make deploy-receiver
 Test receiver contract address is stored in the contracts-80001.json file.
 
 Now, the first test message can be sent be executing `send` function within the bridge contract deployed on goerli.
+It can be done in many ways, but there is a command for sending a test message:
+
+```bash
+$ make send-message
+```

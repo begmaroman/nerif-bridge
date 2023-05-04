@@ -22,10 +22,17 @@ init:
 	touch contracts-<chain-id>.json contracts-80001.json
 
 .PHONY: deploy
-deploy:
+deploy: deploy-bridge deploy-receiver
+
+.PHONY: deploy-bridge
+deploy-bridge:
 	npx hardhat --network mumbai run scripts/deploy-bridge.ts
 	npx hardhat --network goerli run scripts/deploy-bridge.ts
 
 .PHONY: deploy-receiver
 deploy-receiver:
 	npx hardhat --network mumbai run scripts/deploy-test-receiver.ts
+
+.PHONY: send-message
+send-message:
+	npx hardhat --network goerli run scripts/send-message.ts

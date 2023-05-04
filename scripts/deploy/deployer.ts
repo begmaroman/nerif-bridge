@@ -2,10 +2,6 @@ import hre from 'hardhat';
 import { ethers } from 'hardhat';
 import { BaseContract, Contract, ContractTransaction } from 'ethers';
 
-export interface ContractsObject {
-  [key: string]: Contract;
-}
-
 export interface ContractFactory<C extends Contract> {
   deploy(): Promise<C>;
 }
