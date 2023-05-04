@@ -28,7 +28,7 @@ Replace gateway address for the real one in those .json files. Specify real valu
 Now the bridge contracts can be deployed:
 
 ```bash
-$ make deploy-bridge
+$ VERIFY=true make deploy-bridge
 ```
 
 As a result, [the bridge contract](./contracts/bridge/NerifBridge.sol) will be deployed on Goerli (5) and Mumbai (80001) chains.
@@ -54,7 +54,7 @@ There is [the test receiver contract](./contracts/test/TestReceiver.sol) that ca
 The following command deploys this contract on the Mumbai (80001) chain:
 
 ```bash
-$ make deploy-receiver
+$ VERIFY=true make deploy-receiver
 ```
 
 Test receiver contract address is stored in the contracts-80001.json file.

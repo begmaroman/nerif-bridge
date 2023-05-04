@@ -23,6 +23,7 @@ async function waitMessageReceived(recipientContracts: any): Promise<boolean> {
         const listener = (chainId: BigNumber, sender: string, payload: any) => {
             console.log(`Got message: chainId=${chainId}, sender=${sender}, payload=${payload}`);
             resolve(true);
+            return false;
         };
 
         testReceiver.on(eventName, listener);
@@ -51,7 +52,7 @@ async function main() {
 
     // Send message to the test receiver
     console.log("Sending message...");
-    const tx = await bridge.send(recipientChainId, recipientChainContracts.testReceiver, "0x07", 200000);
+    const tx = await bridge.send(recipientChainId, recipientChainContracts.testReceiver, "Test goerli -> mumbai message", 200000);
     const receipt = await tx.wait();
     console.log(`Message has been successfully sent: ${receipt.transactionHash}\n`);
 
