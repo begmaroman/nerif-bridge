@@ -40,13 +40,16 @@ const config: HardhatUserConfig = {
     currency: "USD",
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: {
+      goerli: process.env.ETHERSCAN_API_KEY || '',
+      mumbai: process.env.POLYGONSCAN_API_KEY || ''
+    },
     customChains: [
       {
         network: "goerli",
         chainId: 5,
         urls: {
-          apiURL: "https://goerli.etherscan.io/api",
+          apiURL: "https://api-goerli.etherscan.io/api",
           browserURL: "https://goerli.etherscan.io"
         }
       },
@@ -54,7 +57,7 @@ const config: HardhatUserConfig = {
         network: "mumbai",
         chainId: 80001,
         urls: {
-          apiURL: "https://mumbai.polygonscan.com/api",
+          apiURL: "https://api-testnet.polygonscan.com/api",
           browserURL: "https://mumbai.polygonscan.com"
         }
       },
