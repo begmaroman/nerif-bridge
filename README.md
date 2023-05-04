@@ -10,7 +10,7 @@ Nerif Bridge is the decentralized cross-chain bridge powered by Nerif Network.
 
 Bootstrapping the Nerif Bridge requires deploying several smart contracts and creating a special workflow within Nerif Network in order to power the bridge.
 
-Bridge contracts deployment requires having [Gateway](https://github.com/nerifnetwork/contracts/blob/main/contracts/operational/Gateway.sol) contract already deployed.
+Bridge contracts deployment requires having [Gateway](https://github.com/nerifnetwork/contracts/blob/main/contracts/operational/Gateway.sol) contract already deployed and registered per [Registry](https://github.com/nerifnetwork/contracts/blob/main/contracts/operational/Registry.sol#L244) on both Goerli and Mumbai.
 
 ### Initialize environment
 
