@@ -1,10 +1,12 @@
 # Nerif Bridge
 
-**DO NOT USE FOR PRODUCTION PURPOSES**
-
 Nerif Bridge is the decentralized cross-chain bridge powered by Nerif Network.
 
 ![structure.png](./docs/structure.png)
+
+**DO NOT USE FOR PRODUCTION PURPOSES.** 
+This bridge setup does not have a proper security mechanisms, billing, and many other things that are needed for production use.
+The current state of Nerif Bridge shows high level overview of the bridging architecture using [Nerif Network](https://nerif.network) and can be used for demo only.
 
 ## Set up
 
