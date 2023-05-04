@@ -26,7 +26,7 @@ contract TestReceiver is INerifBridgeReceiver, Initializable, Ownable {
 
     // initialize initializes contract with the given bridge contract address
     function initialize(address _bridge) external initializer {
-        bridge = _bridge;
+        setBridge(_bridge);
     }
 
     // nbReceive receives messages from other chains
@@ -40,5 +40,10 @@ contract TestReceiver is INerifBridgeReceiver, Initializable, Ownable {
 
         // Emmit an event
         emit MsgReceived(chainId, sender, payload);
+    }
+
+    // setBridge updates the bridge address
+    function setBridge(address _bridge) public onlyOwner {
+        bridge = _bridge;
     }
 }

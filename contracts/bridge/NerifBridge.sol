@@ -35,7 +35,7 @@ contract NerifBridge is Initializable, Ownable {
             senders[_senders[i]] = true;
         }
 
-        gateway = _gateway;
+        setGateway(_gateway);
     }
 
     // send sends message to other contract on the specified chain.
@@ -77,5 +77,10 @@ contract NerifBridge is Initializable, Ownable {
     // removeSender removes the given sender from the whitelist.
     function removeSender(address sender) external onlyOwner {
         delete senders[sender];
+    }
+
+    // setGateway updates the gateway address.
+    function setGateway(address _gateway) public onlyOwner {
+        gateway = _gateway;
     }
 }
